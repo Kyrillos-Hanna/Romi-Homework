@@ -8,55 +8,36 @@ import frc.robot.subsystems.RomiDrivetrain;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
 /** An example command that uses an example subsystem. */
-public class Forward extends CommandBase {
+public class ExampleCommand extends CommandBase {
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
-  private final RomiDrivetrain m_db;
-  private final double distance;
+  private final RomiDrivetrain m_subsystem;
 
   /**
    * Creates a new ExampleCommand.
    *
    * @param subsystem The subsystem used by this command.
    */
-  public Forward(RomiDrivetrain forward, double inches) {
-    m_Forward = forward;
-    //checks to see if inches is positive or negative. If it is posivitve, we set distance equal to icnhes. If not, we set distance to 0.
-    if (inches > 0) {
-      distance = inches;
-    }
-    else {
-      distance = 0;
-    }
-   
+  public ExampleCommand(RomiDrivetrain subsystem) {
+    m_subsystem = subsystem;
     // Use addRequirements() here to declare subsystem dependencies.
-    addRequirements(forward);
+    addRequirements(subsystem);
   }
 
   // Called when the command is initially scheduled.
   @Override
-  public void initialize() {
-    //reset encoders
-    m_db.resetEncoders();
-  }
+  public void initialize() {}
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {
-    //move robot forward
-    m_Forward.arcadeDrive(0.5, 0);
-  }
+  public void execute() {}
 
   // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted) {
-    //stops robot
-    m_Forward.arcadeDrive(0,0);
-  }
+  public void end(boolean interrupted) {}
 
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
-    //if our distance is move than or equal to the getAVerageDistanceInch, we will stop the robot
-    return (m_Forward.getAverageDistanceInch() >= distance);
+    return false;
   }
 }
