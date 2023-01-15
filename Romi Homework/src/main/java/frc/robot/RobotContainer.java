@@ -28,6 +28,9 @@ public class RobotContainer {
   private static final XboxController m_XboxController = new XboxController(0);
   //makes an object of the DriveWithController class
   private final DriveWithController m_DriveWithController = new DriveWithController(m_romiDrivetrain);
+  //makes an object of teh PIDRomi class
+  private final PIDRomi m_PIDRomi =  new PIDRomi(M-RomiDrivetrain); 
+
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {

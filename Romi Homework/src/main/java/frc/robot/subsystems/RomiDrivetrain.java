@@ -26,6 +26,9 @@ public class RomiDrivetrain extends SubsystemBase {
   // Set up the differential drive controller
   private final DifferentialDrive m_diffDrive = new DifferentialDrive(m_leftMotor, m_rightMotor);
 
+ //makes an object of RomiGyro class
+  RomiGyro m_RomiGyro = new RomiGyro();
+
   /** Creates a new RomiDrivetrain. */
   public RomiDrivetrain() {
     // Use inches as unit for encoder distances
@@ -44,6 +47,11 @@ public class RomiDrivetrain extends SubsystemBase {
   public void resetEncoders() {
     m_leftEncoder.reset();
     m_rightEncoder.reset();
+  }
+
+  //returns the getzangle from the m_RomiGyro object
+  public double getZAngle () {
+    return m_RomiGyro.getAngleZ();
   }
 
   public double getLeftDistanceInch() {
