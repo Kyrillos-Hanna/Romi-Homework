@@ -63,6 +63,6 @@ public class PIDInches extends CommandBase {
   @Override
   public boolean isFinished() {
     //once we travel the desired amount of inches, the robot will call the end command
-    return (m_db.getAverageDistanceInch() >= distance);
+    return (m_db.getRightDistanceInch() >= distance);
   }
 }

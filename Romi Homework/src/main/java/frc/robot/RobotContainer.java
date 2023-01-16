@@ -29,11 +29,13 @@ public class RobotContainer {
   //makes an object of the DriveWithController class
   private final DriveWithController m_DriveWithController = new DriveWithController(m_romiDrivetrain);
   //makes an object of teh PIDRomi class
-  private final PIDRomi m_PIDRomi =  new PIDRomi(M-RomiDrivetrain); 
+  private final PIDRomi m_PIDRomi =  new PIDRomi(m_romiDrivetrain); 
   //makes an object of the PIDInches class 
-  private final PIDInches m_PIDInches = new PIDInches(m_RomiDrivetrain, 10);
+  // private final PIDInches m_PIDInches = new PIDInches(m_RomiDrivetrain, 10);
   //Make an object of the Turn90Degrees.java
-  private final Turn90Degrees m_Turn90Degrees = new Turn90Degrees(m_RomiDriveTrain, 90);
+  private final Turn90Degrees m_Turn90Degrees = new Turn90Degrees(m_romiDriveTrain, 90);
+  //turn -90 degrres
+   private final Turn90Degrees m_TurnNegative90Degrees = new Turn90Degrees(m_romiDriveTrain, -90);
   
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
@@ -57,6 +59,7 @@ public class RobotContainer {
    */
   public Command getAutonomousCommand() {
     // An ExampleCommand will run in autonomous
-    return WaitCommand(0.2).andThen(m_PIDInches).alongWith(m_Turn90Degrees).alongWith(m_PIDInches).alongWith(m_Turn90Degrees).alongWith(m_PIDInches).alongWith(m_Turn90Degrees).alongWith(m_PIDInches);
+    // return WaitCommand(0.2).andThen(m_PIDInches).alongWith(m_Turn90Degrees).alongWith(m_PIDInches).alongWith(m_Turn90Degrees).alongWith(m_PIDInches).alongWith(m_Turn90Degrees).alongWith(m_PIDInches);
+    return WaitCommand(0.2).andThen(new PIDInches(m_romiDrivetrain, 30.5)).andThen(m_Turn90Degrees).andThen(new PIDInches(m_romiDrivetrain, 48)).andThen(m_TurnNegative90Degrees).andThen(new PIDInches(m_romiDrivetrain, 24)).andThen(m_Turn90Degrees).andThen(new PIDInches(m_romiDrivetrain, 50));
   }
 }
