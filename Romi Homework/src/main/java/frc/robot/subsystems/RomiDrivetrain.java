@@ -53,6 +53,10 @@ public class RomiDrivetrain extends SubsystemBase {
   public double getZAngle () {
     return m_RomiGyro.getAngleZ();
   }
+   //reset gyroscope
+  public void Reset () {
+    m_RomiGyro.reset();
+  }
 
   public double getLeftDistanceInch() {
     return m_leftEncoder.getDistance();

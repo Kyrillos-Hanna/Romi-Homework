@@ -32,7 +32,7 @@ public class PIDRomi extends CommandBase {
   @Override
   public void initialize() {
     //reset gyroscope
-    m_RomiGyro.reset();
+    m_db.Reset();
     //reset encoders
     m_db.resetEncoders();
   }
