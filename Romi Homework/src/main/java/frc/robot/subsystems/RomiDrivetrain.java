@@ -49,7 +49,7 @@ public class RomiDrivetrain extends SubsystemBase {
     m_rightEncoder.reset();
   }
 
-  //returns the getzangle from the m_RomiGyro object
+  //returns the getAngleZ from the m_RomiGyro object
   public double getZAngle () {
     return m_RomiGyro.getAngleZ();
   }
