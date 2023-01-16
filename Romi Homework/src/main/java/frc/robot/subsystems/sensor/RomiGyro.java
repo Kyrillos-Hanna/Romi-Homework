@@ -1,4 +1,4 @@
-package frc.robot.sensor;
+package frc.robot.subsystems.sensor;
 
 import edu.wpi.first.hal.SimDevice;
 import edu.wpi.first.hal.SimDevice.Direction;

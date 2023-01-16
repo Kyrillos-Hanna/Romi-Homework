@@ -8,6 +8,7 @@ import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.motorcontrol.Spark;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.subsystems.sensor.RomiGyro;
 
 public class RomiDrivetrain extends SubsystemBase {
   private static final double kCountsPerRevolution = 1440.0;
@@ -27,7 +28,7 @@ public class RomiDrivetrain extends SubsystemBase {
   private final DifferentialDrive m_diffDrive = new DifferentialDrive(m_leftMotor, m_rightMotor);
 
  //makes an object of RomiGyro class
-  RomiGyro m_RomiGyro = new RomiGyro();
+  private final RomiGyro m_RomiGyro = new RomiGyro();
 
   /** Creates a new RomiDrivetrain. */
   public RomiDrivetrain() {
